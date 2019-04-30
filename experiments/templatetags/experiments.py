@@ -12,7 +12,9 @@ register = template.Library()
 
 @register.inclusion_tag('experiments/goal.html')
 def experiment_goal(goal_name):
-    return {'url': reverse('experiment_goal', kwargs={'goal_name': goal_name, 'cache_buster': uuid4()})}
+    return {
+        'url': reverse('experiment_goal', kwargs={'goal_name': goal_name, 'cache_buster': uuid4()})
+    }
 
 
 @register.inclusion_tag('experiments/confirm_human.html', takes_context=True)
