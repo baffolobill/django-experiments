@@ -10,7 +10,7 @@ with codecs.open(path.join(PATH, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='django-experiments',
-    version='1.2.0',
+    version='1.3.0',
     description='Python Django AB Testing Framework',
     long_description=LONG_DESCRIPTION,
     author='Mixcloud',
@@ -20,8 +20,8 @@ setup(
     include_package_data=True,
     license='MIT',
     install_requires=[
-        'django>=1.8',
-        'django-modeldict-yplan>=1.5.0,<2.0.0',
+        'django>=2.0',
+        'django-modeldict-yplan>=2.0.0,<2.1.0',
         'redis>=2.4.9',
     ],
     tests_require=[
