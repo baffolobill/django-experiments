@@ -8,6 +8,7 @@ GOAL_KEY = '%s:%s:%s:goal'
 
 logger = logging.getLogger('experiments')
 
+
 class ExperimentCounter(object):
     def __init__(self):
         self.counters = counters.Counters()
