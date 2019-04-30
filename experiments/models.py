@@ -1,11 +1,11 @@
 import random
 import json
 
-from experiments.dateutils import now
 from django.conf import settings
 from django.contrib.postgres.fields import JSONField
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
+from django.utils import timezone
 
 from experiments import conf
 
@@ -33,7 +33,7 @@ class Experiment(models.Model):
 
     state = models.IntegerField(default=CONTROL_STATE, choices=STATES)
 
-    start_date = models.DateTimeField(default=now, blank=True, null=True, db_index=True)
+    start_date = models.DateTimeField(default=timezone.now, blank=True, null=True, db_index=True)
     end_date = models.DateTimeField(blank=True, null=True)
 
     def is_displaying_alternatives(self):
