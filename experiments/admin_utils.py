@@ -113,11 +113,11 @@ def get_result_context(request, experiment):
     try:
         chi2_goals = experiment.relevant_chi2_goals.replace(" ", "").split(",")
     except AttributeError:
-        chi2_goals = [u'']
+        chi2_goals = ['']
     try:
         mwu_goals = experiment.relevant_mwu_goals.replace(" ", "").split(",")
     except AttributeError:
-        mwu_goals = [u'']
+        mwu_goals = ['']
     relevant_goals = set(chi2_goals + mwu_goals)
 
     alternatives = {}
@@ -176,7 +176,7 @@ def get_result_context(request, experiment):
         results[goal] = {
             "control": control,
             "alternatives": sorted(alternatives_conversions.items()),
-            "relevant": goal in relevant_goals or relevant_goals == {u''},
+            "relevant": goal in relevant_goals or relevant_goals == {''},
             "mwu": goal in mwu_goals,
             "mwu_histogram": conversion_distributions_to_graph_table(mwu_histogram) if show_mwu else None
         }

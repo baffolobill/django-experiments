@@ -85,7 +85,7 @@ class Experiment(models.Model):
         else:
             return random.choice(list(self.alternatives))
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def to_dict(self):
@@ -117,8 +117,8 @@ class Enrollment(models.Model):
     class Meta:
         unique_together = ('user', 'experiment')
 
-    def __unicode__(self):
-        return u'%s - %s' % (self.user, self.experiment)
+    def __str__(self):
+        return '%s - %s' % (self.user, self.experiment)
 
 
 def weighted_choice(choices):
