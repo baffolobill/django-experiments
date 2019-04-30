@@ -1,13 +1,13 @@
 from django.db import models
-from django.core.serializers.json import DjangoJSONEncoder
 from django.conf import settings
 
-from jsonfield import JSONField
 
 import random
 import json
 
 from experiments.dateutils import now
+from django.contrib.postgres.fields import JSONField
+from django.core.serializers.json import DjangoJSONEncoder
 from experiments import conf
 
 
@@ -25,7 +25,10 @@ STATES = (
 class Experiment(models.Model):
     name = models.CharField(primary_key=True, max_length=128)
     description = models.TextField(default="", blank=True, null=True)
-    alternatives = JSONField(default={}, blank=True)
+    alternatives = JSONField(
+        blank=True, null=True,
+        default=dict,
+        encoder=DjangoJSONEncoder)
     relevant_chi2_goals = models.TextField(default="", null=True, blank=True)
     relevant_mwu_goals = models.TextField(default="", null=True, blank=True)
 

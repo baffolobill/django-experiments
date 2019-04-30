@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.db import models, migrations
+import django.contrib.postgres.fields.jsonb
+import django.core.serializers.json
 import django.utils.timezone
-import jsonfield.fields
 from django.conf import settings
+from django.db import models, migrations
 
 
 class Migration(migrations.Migration):
@@ -28,7 +27,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('name', models.CharField(max_length=128, serialize=False, primary_key=True)),
                 ('description', models.TextField(default=b'', null=True, blank=True)),
-                ('alternatives', jsonfield.fields.JSONField(default={}, blank=True)),
+                ('alternatives', django.contrib.postgres.fields.jsonb.JSONField(blank=True, default=dict, encoder=django.core.serializers.json.DjangoJSONEncoder, null=True)),
                 ('relevant_chi2_goals', models.TextField(default=b'', null=True, blank=True)),
                 ('relevant_mwu_goals', models.TextField(default=b'', null=True, blank=True)),
                 ('state', models.IntegerField(default=0, choices=[(0, b'Default/Control'), (1, b'Enabled'), (3, b'Track')])),
