@@ -1,6 +1,7 @@
-from experiments import counters, conf
 import logging
 import json
+
+from experiments import counters, conf
 
 PARTICIPANT_KEY = '%s:%s:participant'
 GOAL_KEY = '%s:%s:%s:goal'

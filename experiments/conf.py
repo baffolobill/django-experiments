@@ -1,6 +1,7 @@
-from django.conf import settings
-from itertools import chain
 import re
+from itertools import chain
+
+from django.conf import settings
 
 CONTROL_GROUP = 'control'
 

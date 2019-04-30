@@ -1,12 +1,15 @@
+from django import forms
 from django.contrib import admin
 from django.contrib.admin.utils import unquote
-from django import forms
-from django.http import JsonResponse, HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
+from django.http import (
+    JsonResponse, HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
+)
 from django.utils import timezone
 from django.urls import re_path
+
+from experiments import conf
 from experiments.admin_utils import get_result_context
 from experiments.models import Experiment
-from experiments import conf
 from experiments.utils import participant
 
 

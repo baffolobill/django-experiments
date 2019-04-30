@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.views.decorators.cache import never_cache
 from django.shortcuts import get_object_or_404
+from django.views.decorators.cache import never_cache
 from django.views.decorators.http import require_POST
 
 from experiments.utils import participant

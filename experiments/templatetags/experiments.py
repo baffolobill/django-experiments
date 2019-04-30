@@ -1,13 +1,11 @@
-from __future__ import absolute_import
+from uuid import uuid4
 
 from django import template
 from django.urls import reverse
 
-from experiments.utils import participant
-from experiments.manager import experiment_manager
 from experiments import conf
-
-from uuid import uuid4
+from experiments.manager import experiment_manager
+from experiments.utils import participant
 
 register = template.Library()
 

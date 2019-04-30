@@ -1,9 +1,9 @@
+import json
+
+from experiments import conf
 from experiments.experiment_counters import ExperimentCounter
 from experiments.significance import chi_square_p_value, mann_whitney
 from experiments.utils import participant
-from experiments import conf
-
-import json
 
 
 MIN_ACTIONS_TO_SHOW = 3

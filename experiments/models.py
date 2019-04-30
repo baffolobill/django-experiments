@@ -1,13 +1,12 @@
-from django.db import models
-from django.conf import settings
-
-
 import random
 import json
 
 from experiments.dateutils import now
+from django.conf import settings
 from django.contrib.postgres.fields import JSONField
 from django.core.serializers.json import DjangoJSONEncoder
+from django.db import models
+
 from experiments import conf
 
 

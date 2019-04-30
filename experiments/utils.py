@@ -1,3 +1,10 @@
+import collections
+import numbers
+import logging
+import json
+from collections import namedtuple
+from datetime import timedelta
+
 from django.db import IntegrityError
 
 from experiments.models import Enrollment
@@ -7,13 +14,7 @@ from experiments.signals import user_enrolled
 from experiments.experiment_counters import ExperimentCounter
 from experiments import conf
 
-from collections import namedtuple
-from datetime import timedelta
 
-import collections
-import numbers
-import logging
-import json
 
 logger = logging.getLogger('experiments')
 
